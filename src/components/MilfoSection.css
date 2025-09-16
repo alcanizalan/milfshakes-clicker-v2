@@ -1,0 +1,170 @@
+.sectionMilfo{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+    background-color: white;
+}
+
+.sectionMilfo .sectionClickableMilfo{
+    grid-area: 1/1/2/2;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    background-color: rgb(109, 175, 230);
+}
+
+.sectionMilfo .sectionCounter{
+    grid-area: 2/1/3/2;
+    background-color: rgb(170, 21, 21);
+}
+
+.hitBox{
+    position: absolute;
+    width: 400px;
+    height: 550px;
+    z-index: 100;
+    align-self: center;
+    justify-self: center;
+}
+
+.hitBox:hover .milfo-img-2{
+    transform: scale(1.05);
+}
+
+#divError{
+    position: absolute;
+    z-index: 110;
+    color: white;
+    background-color: var(--rojo-oscuro);
+    display: none;
+    height: fit-content;
+    top: 80%;
+    padding: 10px;
+}
+
+.milfo-img{
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.milfo-img-1{
+    z-index: 60;
+    animation: subirBajar1 4s infinite ease-in-out;
+}
+
+.milfo-img-2{
+    z-index: 50;
+    transition: transform .3s ease;
+    animation: subirBajar2 4s infinite ease-in-out
+}
+
+.milfo-img-3{
+    z-index: 40;
+    animation: subirBajar3 4s infinite ease-in-out
+}
+
+.milfo-img-4{
+    animation: subirBajar4 4s infinite ease-in-out
+}
+
+.milfo-img-5{
+    animation: subirBajar5 4s infinite ease-in-out
+}
+
+.milfo-img-6{
+    animation: subirBajar6 4s infinite ease-in-out
+}
+
+@keyframes subirBajar1 {
+      0%   { top: 0; }
+      50%  { top: 4px; }
+      100% { top: 0; }
+    }
+
+@keyframes subirBajar2 {
+      0%   { top: 7px; }
+      50%  { top: 0px; }
+      100% { top: 7px; }
+    }
+
+@keyframes subirBajar3 {
+      0%   { top: 0; }
+      50%  { top: 10px; }
+      100% { top: 0; }
+    }
+
+@keyframes subirBajar4 {
+      0%   { top: 0; }
+      50%  { top: -10px; }
+      100% { top: 0; }
+    }
+
+@keyframes subirBajar5 {
+      0%   { top: -10px; }
+      50%  { top: 0; }
+      100% { top: -10px; }
+    }
+
+@keyframes subirBajar6 {
+      0%   { top: 0; }
+      50%  { top: 10px; }
+      100% { top: 0; }
+    }
+
+    .milfo-layer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+    height: 100%;
+}
+
+.section-milfo__clicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#milfo-hit-box{
+    height: 85%;
+    margin-top: 60px;
+    width: 60%;
+}
+
+.section-points{
+    grid-area: 4/2/5/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.points-counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionCounter{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    font-weight: 700;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    align-items: center;
+    align-self: end;
+}
+
+.milfoPoints{
+    height: 2em; 
+    margin-left: 5px;
+}
