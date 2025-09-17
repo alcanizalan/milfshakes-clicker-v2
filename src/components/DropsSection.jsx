@@ -2,7 +2,7 @@ import Drop from './Drop.jsx'
 
 import './DropsSection.css'
 
-export default function DropsSection ({drops, setDropsState, milfoPoints, setMilfoPoints,pointsAutoGain, setPointsAutoGain}) {
+export default function DropsSection ({drops, setDropsState, milfoPoints, setMilfoPoints,pointsAutoGain, setPointsAutoGain, thousandSuffixes, formatCost}) {
   const handleClickDrop = (index) => {
     const newDrops = [...drops];
     if (!drops[index].active && drops[index].cost <= milfoPoints) { 
@@ -33,6 +33,8 @@ export default function DropsSection ({drops, setDropsState, milfoPoints, setMil
             dropAutoGain={drop.autoGain}
             dropActive={drop.active}
             dropLevel={drop.level}
+            thousandSuffixes={thousandSuffixes}
+            formatCost={formatCost}
             onClick={() => handleClickDrop(index)}
           />
         ))

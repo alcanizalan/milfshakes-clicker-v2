@@ -81,7 +81,29 @@ let drops = [
     },
 ]
 
-let PPC = 10;
+const thousandSuffixes = ["", "K", "M", "B", "T", "Qa", "Qi", "S", "Oc", "No", "D"];
+
+function formatCost(cost, suffixes) {
+    let coste = cost;
+    let digits = 0;
+    let suffix = "";
+
+    while (coste >= 1000){
+        coste = coste / 1000;
+        digits = digits + 1;
+    } 
+    suffix = suffixes[digits];
+    if (digits>=1){
+      coste = Math.floor(coste*100)/100
+    }else{
+      coste = Math.floor(coste)
+    }
+    
+    let resultadoFormateo = coste + "" + suffix;
+    return resultadoFormateo;
+}
+
+let PPC = 10000;
 
 export default function App() {
   const [milfoPoints, setMilfoPoints] = useState(0);
@@ -106,8 +128,10 @@ export default function App() {
         setMilfoPoints={setMilfoPoints} 
         pointsAutoGain={pointsAutoGain}
         setPointsAutoGain={setPointsAutoGain}
+        thousandSuffixes={thousandSuffixes}
+        formatCost={formatCost}
         />
-      <MilfoSection milfoPoints={milfoPoints} setMilfoPoints ={setMilfoPoints} PPC={PPC}/>
+      <MilfoSection milfoPoints={milfoPoints} setMilfoPoints ={setMilfoPoints} PPC={PPC} thousandSuffixes={thousandSuffixes} formatCost={formatCost} />
       <UpgradesSection />
     </div>
   )

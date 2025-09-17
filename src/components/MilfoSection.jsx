@@ -7,8 +7,9 @@ import milfoLayer4 from '../assets/milfoclickv1_capa4.png'
 import milfoLayer5 from '../assets/milfoclickv1_capa5.png'
 import milfoLayer6 from '../assets/milfoclickv1_capa6.png'
 
-export default function MilfoSection ({milfoPoints, setMilfoPoints, PPC}) {
 
+export default function MilfoSection ({milfoPoints, setMilfoPoints, PPC, thousandSuffixes, formatCost}) {
+    const formatedPoints = formatCost(milfoPoints, thousandSuffixes);
     
     return(
         <section className='sectionMilfo'>
@@ -25,7 +26,7 @@ export default function MilfoSection ({milfoPoints, setMilfoPoints, PPC}) {
                 <img src={milfoLayer6} className="milfo-img milfo-img-6" alt="" />
             </div>
             <div className='sectionCounter'>
-                <p id="milfo-points">{milfoPoints}</p>
+                <p id="milfo-points">{formatedPoints}</p>
                 <img className='mifoPoints' alt="" />
             </div>
         </section>

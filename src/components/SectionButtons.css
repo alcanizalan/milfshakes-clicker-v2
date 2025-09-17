@@ -1,7 +1,7 @@
 .containerForButtons{
     width: 95%;
     height: auto;
-    background-color: white;
+    background-color: rgb(150, 21, 21);
     border-bottom: 3px solid red;
     display: flex;
     flex-wrap: wrap;
