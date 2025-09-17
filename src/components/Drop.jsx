@@ -3,6 +3,9 @@ import './drop.css'
 
 export default function Drop ({dropImage, dropName, dropCost, dropAutoGain, dropActive, dropLevel, onClick}) {
     const buttonClass = dropActive ? "drop-not-blocked" : "drop-blocked";
+    const priceResponsive = dropActive = true ? "???" : {dropCost}
+    const nameResponsive = dropActive = true ? "???" : {dropName}
+
     return(
         <button className="div-levels" onClick={onClick}>
             <div className={buttonClass}>
@@ -16,9 +19,9 @@ export default function Drop ({dropImage, dropName, dropCost, dropAutoGain, drop
                 <img src={dropImage} alt="" />
             </div>
             <div className="drop_names">
-                <p>{dropName}</p>
+                <p>{nameResponsive}</p>
                 <div className='unknownLevel'>
-                    <p className='unknownLevelp'>{dropCost}</p>
+                    <p className='unknownLevelp'>{priceResponsive}</p>
                     <img src='../assets/mpoints2Red.png' alt="" className='unknownLevelImg' />
                 </div>
             </div>

@@ -82,12 +82,11 @@ let drops = [
 ]
 
 let PPC = 10;
-let PAG = 0;
 
 export default function App() {
   const [milfoPoints, setMilfoPoints] = useState(0);
   const [dropsState, setDropsState] = useState(drops);
-  const [pointsAutoGain, setPointsAutoGain] = useState(PAG);
+  const [pointsAutoGain, setPointsAutoGain] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
