@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import SectionButtons from './SectionButtons'
 
 import './UpgradesSection.css'
@@ -24,98 +25,119 @@ let buttonsPowerUp = [
         idSectionPowerUp: "sbt-1",
         containerButtons: [
         {
-            idButton: "bt-1",
+            idButton: 1,
             imgButton: imageButton1,
-            active: false
+            active: true,
+            buttonCost: 100
         },
         {
-            idButton: "bt-2",
+            idButton: 2,
             imgButton: imageButton2,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-3",
+            idButton: 3,
             imgButton: imageButton3,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-4",
+            idButton: 4,
             imgButton: imageButton4,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-5",
+            idButton: 5,
             imgButton: imageButton5,
-            active: false
+            active: false,
+            buttonCost: 100
         }
     ]},
     {
         idSectionPowerUp: "sbt-2",
         containerButtons: [
         {
-            idButton: "bt-6",
+            idButton: 6,
             imgButton: imageButton6,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-7",
+            idButton: 7,
             imgButton: imageButton7,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-8",
+            idButton: 8,
             imgButton: imageButton8,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-9",
+            idButton: 9,
             imgButton: imageButton9,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-10",
+            idButton: 10,
             imgButton: imageButton10,
-            active: false
+            active: false,
+            buttonCost: 100
         }
     ]},
     {
         idSectionPowerUp: "sbt-3",
         containerButtons: [
         {
-            idButton: "bt-11",
+            idButton: 11,
             imgButton: imageButton11,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-12",
+            idButton: 12,
             imgButton: imageButton12,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-13",
+            idButton: 13,
             imgButton: imageButton13,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-14",
+            idButton: 14,
             imgButton: imageButton14,
-            active: false
+            active: false,
+            buttonCost: 100
         },
         {
-            idButton: "bt-15",
+            idButton: 15,
             imgButton: imageButton15,
-            active: false
+            active: false,
+            buttonCost: 100
         }
     ]}
 ]
 
 export default function UpgradesSection () {
+    const [copyButtons, setCopyButtons] = useState(buttonsPowerUp)
+
     return(
         <section className='sectionUpgrades'>
             {
-                buttonsPowerUp.map(({idSectionPowerUp, containerButtons}) => {
+                copyButtons.map((copyButton, key) => {
                     return(
-                        <SectionButtons idSectionPowerUp={idSectionPowerUp} containerButtons={containerButtons} />
+                        <SectionButtons 
+                        copyButton={copyButton} 
+                        setCopyButtons={setCopyButtons}
+                        idx={key}
+                        />
                     )
                 })
             }

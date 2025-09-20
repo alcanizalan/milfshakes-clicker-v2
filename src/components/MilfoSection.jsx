@@ -17,11 +17,11 @@ export default function MilfoSection ({milfoPoints, setMilfoPoints, PPC, thousan
     const handleClick = () => {
         setMilfoPoints(milfoPoints + PPC)
         setIsScaled(true);
+        const clickSound = new Audio('src/assets/sounds/pop.mp3');
+        clickSound.play();
         setTimeout(() => {
             setIsScaled(false);
         }, 100);
-        const clickSound = new Audio('../assets/sounds/pop.mp3');
-        clickSound.play();
     }
 
     return(

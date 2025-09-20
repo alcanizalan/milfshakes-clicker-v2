@@ -1,27 +1,30 @@
-import {useState} from 'react';
-
 import './SectionButtons.css'
 
-export default function SectionButtons ({idSectionPowerUp, containerButtons}) {
-    const [show, setShow] = useState(false)
+import Button from './Button.jsx'
+
+export default function SectionButtons ({copyButton, setCopyButton}) {
+    
+    const handleClickButton = (index) => {
+        const newButtons = [...copyButton]
+        if(newButtons.containerButtons[index].active == false){
+            newButtons.containerButtons[index].active = true
+            setCopyButton(newButtons)
+        }
+    }
 
     return(
-        <section id={idSectionPowerUp} className='containerForButtons'>
+        <section id={copyButton.idSectionPowerUp} className='containerForButtons'>
             {
-            containerButtons.map(({idButton, imgButton}) => {
+            copyButton.containerButtons.map((button, index) => {
                 return(
-                    <div 
-                        onMouseEnter={() => setShow(true)}
-                        onMouseLeave={() => setShow(false)}
-                        className='mensageBotones'
-                    >
-                        <button title='mensaje' className="shopItem" key={idButton}>
-                            <img className="imgShop" src={imgButton} alt="Imagen Milfo" />
-                        </button>
-                        <div className={`mensage ${show ? "show" : ""}`}>
-                            <span>123</span>
-                        </div> 
-                    </div>
+                    <Button 
+                        handleClickButton={() => handleClickButton(index)}
+                        idButton={button.idButton}
+                        imgButton={button.imgButton}
+                        activeButton={button.active}
+                        costButton={button.buttonCost}
+                        index={index}
+                    />
                 )
             })
         }
