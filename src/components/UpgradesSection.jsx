@@ -25,23 +25,28 @@ let buttonsPowerUp = [
         containerButtons: [
         {
             idButton: "bt-1",
-            imgButton: imageButton1
+            imgButton: imageButton1,
+            active: false
         },
         {
             idButton: "bt-2",
-            imgButton: imageButton2
+            imgButton: imageButton2,
+            active: false
         },
         {
             idButton: "bt-3",
-            imgButton: imageButton3
+            imgButton: imageButton3,
+            active: false
         },
         {
             idButton: "bt-4",
-            imgButton: imageButton4
+            imgButton: imageButton4,
+            active: false
         },
         {
             idButton: "bt-5",
-            imgButton: imageButton5
+            imgButton: imageButton5,
+            active: false
         }
     ]},
     {
@@ -49,23 +54,28 @@ let buttonsPowerUp = [
         containerButtons: [
         {
             idButton: "bt-6",
-            imgButton: imageButton6
+            imgButton: imageButton6,
+            active: false
         },
         {
             idButton: "bt-7",
-            imgButton: imageButton7
+            imgButton: imageButton7,
+            active: false
         },
         {
             idButton: "bt-8",
-            imgButton: imageButton8
+            imgButton: imageButton8,
+            active: false
         },
         {
             idButton: "bt-9",
-            imgButton: imageButton9
+            imgButton: imageButton9,
+            active: false
         },
         {
             idButton: "bt-10",
-            imgButton: imageButton10
+            imgButton: imageButton10,
+            active: false
         }
     ]},
     {
@@ -73,23 +83,28 @@ let buttonsPowerUp = [
         containerButtons: [
         {
             idButton: "bt-11",
-            imgButton: imageButton11
+            imgButton: imageButton11,
+            active: false
         },
         {
             idButton: "bt-12",
-            imgButton: imageButton12
+            imgButton: imageButton12,
+            active: false
         },
         {
             idButton: "bt-13",
-            imgButton: imageButton13
+            imgButton: imageButton13,
+            active: false
         },
         {
             idButton: "bt-14",
-            imgButton: imageButton14
+            imgButton: imageButton14,
+            active: false
         },
         {
             idButton: "bt-15",
-            imgButton: imageButton15
+            imgButton: imageButton15,
+            active: false
         }
     ]}
 ]

@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root{
+    --red-milfshakes: rgb(239,20,33);
+    --rojo-oscuro: rgb(183,5,5);
+    --white-shake: #f3f3f3;
+}
+
 main{
     background-color: rgb(22, 22, 22);
     height: 100vh;

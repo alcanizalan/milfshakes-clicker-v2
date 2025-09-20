@@ -103,7 +103,7 @@ function formatCost(cost, suffixes) {
     return resultadoFormateo;
 }
 
-let PPC = 10000;
+let PPC = 100;
 
 export default function App() {
   const [milfoPoints, setMilfoPoints] = useState(0);

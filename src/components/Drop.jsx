@@ -1,23 +1,6 @@
 import {useState} from 'react'
 import './drop.css'
 
-const thousandSuffixes = ["", "K", "M", "B", "T", "Qa", "Qi", "S", "Oc", "No", "D"];
-
-function formatCost(cost, suffixes) {
-    let coste = cost;
-    let digits = 0;
-    let suffix = "";
-
-    while (coste >= 1000){
-        coste = coste / 1000;
-        digits = digits + 1;
-    } 
-    suffix = suffixes[digits];
-    coste = Math.floor(coste)
-    let resultadoFormateo = coste + "" + suffix;
-    return resultadoFormateo;
-}
-
 
 export default function Drop ({dropImage, dropName, dropCost, dropAutoGain, dropActive, dropLevel, onClick, thousandSuffixes, formatCost}) {
     const buttonClass = dropActive ? "drop-not-blocked" : "drop-blocked";

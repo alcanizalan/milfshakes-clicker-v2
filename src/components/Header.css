@@ -1,5 +1,5 @@
 .headerAdvise{
-    background: rgb(151, 0, 0);
+    background: var(--rojo-oscuro);
     grid-area: 1/1/2/4;
     color: white;
     font-weight: 800;

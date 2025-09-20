@@ -1,7 +1,7 @@
 .div-levels{
     min-width: 300px;
     width: 90%;
-    background-color: white;
+    background-color: var(--white-shake);
     position: relative;
     display: flex;
     flex-flow: column;
@@ -48,7 +48,7 @@ display: none;
     align-items: center;
     color: rgb(255, 255, 255);
     font-size: 18px;
-    background: red;
+    background: var(--red-milfshakes);
     border-top: 3px solid white;
     border-radius: 20px;
     background-size: contain;
@@ -64,7 +64,6 @@ display: none;
 .drop_img{
     width: auto;
     height: 70%;
-    background-color: aqua;
     margin: 15px 10px 5px 10px;
     overflow: hidden;
 }
@@ -77,7 +76,7 @@ display: none;
 .div-levels:hover{
     background-color: #d8d8d8;
     border-bottom: 5px solid #b3b3b3;
-    color: red;
+    color: var(--red-milfshakes);
 }
 
 .div-levels:hover .level{
@@ -89,7 +88,7 @@ display: none;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    color: red;
+    color: var(--red-milfshakes);
     font-size: 18px;
     font-family: "Geologica", sans-serif;
     font-weight: 700;
