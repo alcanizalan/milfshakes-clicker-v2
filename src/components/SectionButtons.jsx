@@ -2,28 +2,28 @@ import './SectionButtons.css'
 
 import Button from './Button.jsx'
 
-export default function SectionButtons ({copyButton, setCopyButton}) {
-    
-    const handleClickButton = (index) => {
+export default function SectionButtons ({copyButton, setCopyButton, milfoPoints, setMilfoPoints}) {
+    const handleClickButton = (key) => {
         const newButtons = [...copyButton]
-        if(newButtons.containerButtons[index].active == false){
-            newButtons.containerButtons[index].active = true
+        if(newButtons[key].active == false && newButtons[key].buttonCost <= milfoPoints){
+            setMilfoPoints(milfoPoints - newButtons[key].buttonCost);
+            newButtons[key].active = true
             setCopyButton(newButtons)
-        }
+        }  
     }
 
     return(
-        <section id={copyButton.idSectionPowerUp} className='containerForButtons'>
+        <section className='containerForButtons'>
             {
-            copyButton.containerButtons.map((button, index) => {
+            copyButton.map((button, key) => {
                 return(
                     <Button 
-                        handleClickButton={() => handleClickButton(index)}
+                        key={button.idButton}
+                        handleClickButton={() => handleClickButton(key)}
                         idButton={button.idButton}
                         imgButton={button.imgButton}
                         activeButton={button.active}
                         costButton={button.buttonCost}
-                        index={index}
                     />
                 )
             })
@@ -31,8 +31,3 @@ export default function SectionButtons ({copyButton, setCopyButton}) {
     </section>
     )
 }
-//return(
-//                    <button title='mensaje' className="shopItem" key={idButton}>
-//                        <img className="imgShop" src={imgButton} alt="Imagen Milfo" />
-//                    </button>
-//                )

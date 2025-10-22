@@ -1,8 +1,13 @@
 import Drop from './Drop.jsx'
+import { useState } from 'react'
+import { drops as initialDrops } from '../data/drops.js'
+import { thousandSuffixes } from '../data/suffixes.js'
 
 import './DropsSection.css'
 
-export default function DropsSection ({drops, setDropsState, milfoPoints, setMilfoPoints,pointsAutoGain, setPointsAutoGain, thousandSuffixes, formatCost}) {
+export default function DropsSection ({milfoPoints, setMilfoPoints, pointsAutoGain, setPointsAutoGain, formatCost}) {
+  const [drops, setDrops] = useState(initialDrops);
+
   const handleClickDrop = (index) => {
     const newDrops = [...drops];
     if (!newDrops[index].active && newDrops[index].cost <= milfoPoints) { 
@@ -11,22 +16,22 @@ export default function DropsSection ({drops, setDropsState, milfoPoints, setMil
       newDrops[index].cost = newDrops[index].cost * 1.15; 
       newDrops[index].level += 1;
       setPointsAutoGain(pointsAutoGain + newDrops[index].autoGain);
-      setDropsState(newDrops);
+      setDrops(newDrops);
     }else if (newDrops[index].active && newDrops[index].cost <= milfoPoints) {
       setMilfoPoints(milfoPoints - newDrops[index].cost);
       newDrops[index].cost = newDrops[index].cost * 1.15; 
       newDrops[index].level += 1;
       setPointsAutoGain(pointsAutoGain + newDrops[index].autoGain);
-      setDropsState(newDrops);
+      setDrops(newDrops);
     } 
   };
 
   return (
     <section className='sectionDrops'>
       {
-        drops.map((drop, index) => (
+        drops.map((drop, key) => (
           <Drop
-            key={drop.idDrop}
+            key={key}
             dropImage={drop.dropImg}
             dropName={drop.name}
             dropCost={drop.cost}
@@ -35,7 +40,7 @@ export default function DropsSection ({drops, setDropsState, milfoPoints, setMil
             dropLevel={drop.level}
             thousandSuffixes={thousandSuffixes}
             formatCost={formatCost}
-            onClick={() => handleClickDrop(index)}
+            onClick={() => handleClickDrop(key)}
           />
         ))
       }

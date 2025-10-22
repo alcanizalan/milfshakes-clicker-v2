@@ -1,0 +1,1 @@
+export const thousandSuffixes = ["", "K", "M", "B", "T", "Qa", "Qi", "S", "Oc", "No", "D"];
