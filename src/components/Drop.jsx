@@ -1,8 +1,7 @@
-import {useState} from 'react'
 import './drop.css'
 
 
-export default function Drop ({dropImage, dropName, dropCost, dropAutoGain, dropActive, dropLevel, onClick, thousandSuffixes, formatCost}) {
+export default function Drop ({dropImage, dropName, dropCost, dropActive, dropLevel, onClick, thousandSuffixes, formatCost}) {
     const buttonClass = dropActive ? "drop-not-blocked" : "drop-blocked";
 
     const formatedCost = formatCost(dropCost, thousandSuffixes);

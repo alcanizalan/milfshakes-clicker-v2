@@ -2,7 +2,7 @@ import './Header.css'
 import React from 'react';
 import iconoUsuario from '../../public/iconoUsuario.svg'
 
-export default function Header (){
+export default function Header ({alternarLogin, setAlternarLogin}) {
     return(
         <header className='headerAdvise'>
             <div className='divClean'></div>
@@ -11,7 +11,7 @@ export default function Header (){
             </div>
             
             <div className='divIconoProfile'>
-                <img id='iconoProfile' src={iconoUsuario} alt="Icono de usuario" />
+                <button onClick={() => setAlternarLogin(!alternarLogin)}><img id='iconoProfile' src={iconoUsuario} alt="Icono de usuario" /></button>
             </div>
         </header>
     )

@@ -2,10 +2,11 @@ import Drop from './Drop.jsx'
 import { useState } from 'react'
 import { drops as initialDrops } from '../data/drops.js'
 import { thousandSuffixes } from '../data/suffixes.js'
+import { formatCost } from '../data/formatCost.js'
 
 import './DropsSection.css'
 
-export default function DropsSection ({milfoPoints, setMilfoPoints, pointsAutoGain, setPointsAutoGain, formatCost}) {
+export default function DropsSection ({milfoPoints, setMilfoPoints, pointsAutoGain, setPointsAutoGain}) {
   const [drops, setDrops] = useState(initialDrops);
 
   const handleClickDrop = (index) => {

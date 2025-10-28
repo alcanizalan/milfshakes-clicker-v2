@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { thousandSuffixes } from '../data/suffixes.js'
+import { formatCost } from '../data/formatCost.js'
 
 import './MilfoSection.css'
 
@@ -11,7 +12,7 @@ import milfoLayer5 from '../assets/milfoclickv1_capa5.png'
 import milfoLayer6 from '../assets/milfoclickv1_capa6.png'
 
 
-export default function MilfoSection ({milfoPoints, setMilfoPoints, PPC,  formatCost}) {
+export default function MilfoSection ({milfoPoints, setMilfoPoints, PPC}) {
     const formatedPoints = formatCost(milfoPoints, thousandSuffixes);
     const [isScaled, setIsScaled] = useState(false);
 
